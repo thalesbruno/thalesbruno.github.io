@@ -1,0 +1,214 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Posts on thalesbruno</title>
+		<link>https://thalesbr.uno/posts/</link>
+		<description>Recent content in Posts on thalesbruno</description>
+		<generator>Hugo -- gohugo.io</generator>
+		<language>en-us</language>
+		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+		<lastBuildDate>Tue, 07 Jul 2020 17:10:09 -0300</lastBuildDate>
+		<atom:link href="https://thalesbr.uno/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Categorical Variables</title>
+			<link>https://thalesbr.uno/posts/categorical-variables/</link>
+			<pubDate>Tue, 07 Jul 2020 17:10:09 -0300</pubDate>
+			
+			<guid>https://thalesbr.uno/posts/categorical-variables/</guid>
+			<description>A categorical variable (sometimes called a nominal variable) is a variable that can assume one of a limited number of possible values described as categories and there is no intrinsic ordering to the categories. It uses labels, names, or other descriptors (even numbers) to identify exclusive categories or types of things.
+As an example of a categorical variable we may mention Nationality having values like Brazilian, Canadian, French, etc., and we can see that there is no ordering between the values: we cannot say that Brazilian is higher than Canadian.</description>
+			<content type="html"><![CDATA[<p>A categorical variable (sometimes called a nominal variable) is a variable that can assume one of a limited number of possible values described as categories and there is no intrinsic ordering to the categories. It uses labels, names, or other descriptors (even numbers) to identify <em>exclusive</em> categories or types of things.</p>
+<p>As an example of a categorical variable we may mention <strong>Nationality</strong> having values like <em>Brazilian, Canadian, French, etc.</em>, and we can see that there is no ordering between the values: we cannot say that Brazilian is higher than Canadian. In summary, there is no way to order these categories from highest to lowest or from best to worst.</p>
+<p>Other examples of categorical variables could be <strong>Regions</strong> (<em>North, South, East, West</em>), <strong>Blood Type</strong> (<em>A, B, AB, O</em>) or <strong>Smartphone Brand</strong> (<em>Apple, Samsumg, LG, Xiami</em>).</p>
+<p>However, if there is a clear order between the categories, so we are dealing with an ordinal variable, that is very similar to a categorical variable and often it&rsquo;s considered a special kind of this and placed on between categorical and quantitative variables. An example of an ordinal variable could be Educational Level (<em>Elementary school education, High school graduate, Some college, College graduate, Graduate degree</em>).</p>
+<p>But in this article we are focusing on pure categorical or nominal variables, so let&rsquo;s check out what we can do with some categorical data.</p>
+<h2 id="frequency-distribution">Frequency distribution</h2>
+<p>Since we have a dataset with some categorical variables, the most common thing we can do is count the occurences of each category in the whole data. This will give us a frequency distribution.</p>
+<p>Let&rsquo;s take a look at some real data to demonstrate a frequency distribution. We will use the Kaggle <a href="https://www.kaggle.com/lava18/google-play-store-apps">Google Play Store Apps</a> dataset from <a href="https://www.kaggle.com/lava18">Lavanya Gupta</a>. This dataset has more than 10,000 rows, each of them is an app from Google Play Store, and as features (columns) we can see the App name, Category, Rating, and others.</p>
+<p>We will use pandas for handling the data. Firstly, we import pandas and read the CSV file downloaded from Kaggle, but only the <em>Category</em> column. Then, we use the <code>unique</code> method to show all values observed in our data. As we can see, there are 34 App Categories in our categorical variable, like <em>Finance, Sports, Weathers</em> and others and we can&rsquo;t see any order between them (<em>Events</em> category is not better or higher than <em>Shopping</em> category, for instance).</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&#34;./data/googleplaystore.csv&#34;</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">])</span>
+<span class="n">categories</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&#34;{len(categories)} categories:&#34;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">categories</span><span class="p">)</span>
+</code></pre></div><pre><code>34 categories:
+['ART_AND_DESIGN' 'AUTO_AND_VEHICLES' 'BEAUTY' 'BOOKS_AND_REFERENCE'
+ 'BUSINESS' 'COMICS' 'COMMUNICATION' 'DATING' 'EDUCATION' 'ENTERTAINMENT'
+ 'EVENTS' 'FINANCE' 'FOOD_AND_DRINK' 'HEALTH_AND_FITNESS' 'HOUSE_AND_HOME'
+ 'LIBRARIES_AND_DEMO' 'LIFESTYLE' 'GAME' 'FAMILY' 'MEDICAL' 'SOCIAL'
+ 'SHOPPING' 'PHOTOGRAPHY' 'SPORTS' 'TRAVEL_AND_LOCAL' 'TOOLS'
+ 'PERSONALIZATION' 'PRODUCTIVITY' 'PARENTING' 'WEATHER' 'VIDEO_PLAYERS'
+ 'NEWS_AND_MAGAZINES' 'MAPS_AND_NAVIGATION' '1.9']
+</code></pre>
+<p>Now that we know all category values we can have, let&rsquo;s count how many times every category occurs in our data using <code>value_counts</code> method.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">frequency</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+
+<span class="c1"># frequency is a pandas Series, so we&#39;ll transform it in a DataFrame just for presentation purposes</span>
+<span class="n">frequency_dist</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">frequency</span><span class="p">)</span>
+<span class="n">frequency_dist</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Frequency&#39;</span><span class="p">]</span>
+<span class="n">frequency_dist</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Category&#39;</span>
+
+<span class="c1"># Using head(10) to show only the first 10 lines</span>
+<span class="n">frequency_dist</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div><div>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Frequency</th>
+    </tr>
+    <tr>
+      <th>Category</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>FAMILY</th>
+      <td>1972</td>
+    </tr>
+    <tr>
+      <th>GAME</th>
+      <td>1144</td>
+    </tr>
+    <tr>
+      <th>TOOLS</th>
+      <td>843</td>
+    </tr>
+    <tr>
+      <th>MEDICAL</th>
+      <td>463</td>
+    </tr>
+    <tr>
+      <th>BUSINESS</th>
+      <td>460</td>
+    </tr>
+    <tr>
+      <th>PRODUCTIVITY</th>
+      <td>424</td>
+    </tr>
+    <tr>
+      <th>PERSONALIZATION</th>
+      <td>392</td>
+    </tr>
+    <tr>
+      <th>COMMUNICATION</th>
+      <td>387</td>
+    </tr>
+    <tr>
+      <th>SPORTS</th>
+      <td>384</td>
+    </tr>
+    <tr>
+      <th>LIFESTYLE</th>
+      <td>382</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>So, we can see above that most apps are from the <em>Family</em> category with 1,972 occurrences. <em>Game</em> and <em>Tools</em> are also common categories, on the other hand, there are few apps from the <em>Beauty</em> category.</p>
+<h2 id="relative-frequency">Relative Frequency</h2>
+<p>At the moment we already know how many apps we have from each category. But what if we wanted to figure out what is the percentage of Medical apps of all apps? Then we need to calculate the relative frequency of category apps dividing the frequency by the total number of apps (aka the sample data).</p>
+<p>Relative frequency of something = Frequency of something / n</p>
+<p>Again, we will use the marvelous pandas. The relative frequency must assume a value from 0 to 1, but here we will multiply it by 100 and show the values in percentage form instead. So, as you can see below, Medical apps represent approximately 4.27% of all apps in Google Play Store according to our dataset.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">frequency_dist</span><span class="p">[</span><span class="s1">&#39;Relative Frequency (%)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">frequency_dist</span><span class="p">[</span><span class="s1">&#39;Frequency&#39;</span><span class="p">]</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">frequency_dist</span><span class="p">[</span><span class="s1">&#39;Frequency&#39;</span><span class="p">]))</span><span class="o">*</span><span class="mi">100</span>
+
+<span class="c1"># Using head(10) to show only the first 10 lines</span>
+<span class="n">frequency_dist</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div><div>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Frequency</th>
+      <th>Relative Frequency (%)</th>
+    </tr>
+    <tr>
+      <th>Category</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>FAMILY</th>
+      <td>1972</td>
+      <td>18.190204</td>
+    </tr>
+    <tr>
+      <th>GAME</th>
+      <td>1144</td>
+      <td>10.552532</td>
+    </tr>
+    <tr>
+      <th>TOOLS</th>
+      <td>843</td>
+      <td>7.776035</td>
+    </tr>
+    <tr>
+      <th>MEDICAL</th>
+      <td>463</td>
+      <td>4.270824</td>
+    </tr>
+    <tr>
+      <th>BUSINESS</th>
+      <td>460</td>
+      <td>4.243151</td>
+    </tr>
+    <tr>
+      <th>PRODUCTIVITY</th>
+      <td>424</td>
+      <td>3.911078</td>
+    </tr>
+    <tr>
+      <th>PERSONALIZATION</th>
+      <td>392</td>
+      <td>3.615903</td>
+    </tr>
+    <tr>
+      <th>COMMUNICATION</th>
+      <td>387</td>
+      <td>3.569781</td>
+    </tr>
+    <tr>
+      <th>SPORTS</th>
+      <td>384</td>
+      <td>3.542109</td>
+    </tr>
+    <tr>
+      <th>LIFESTYLE</th>
+      <td>382</td>
+      <td>3.523660</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h2 id="frequency-bar-chart">Frequency Bar Chart</h2>
+<p>Finally, we will plot the frequency variable in a Bar Chart that is a pretty common way to visualize categorical data.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="n">frequency</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frequency Distribution of Google Play Store app categories&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div><figure>
+    <img src="/img/categorical-variables-bar-chart.png"
+         alt="Portrait"/> 
+</figure>
+
+<p>So, in this article we have seen a bit about Categorical Variables or Nominal Variables, which is a pretty usual data type we face in Statistics, Data Analysis, Machine Learning, and so on. It was just an introductory content, but we may cover it a little deeper in upcoming posts.</p>
+<h2 id="references">References</h2>
+<p><strong>Wikipedia</strong> | Categorical variable <a href="https://en.wikipedia.org/wiki/Categorical_variable">🔎</a><br>
+<strong>UCLA</strong> | WHAT IS THE DIFFERENCE BETWEEN CATEGORICAL, ORDINAL AND NUMERICAL VARIABLES? <a href="https://stats.idre.ucla.edu/other/mult-pkg/whatstat/what-is-the-difference-between-categorical-ordinal-and-numerical-variables/">🔎</a><br>
+<strong>YouTube</strong> | Brandon Foltz | Statistics 101: Describing a Categorical Variable
+<a href="https://www.youtube.com/watch?v=vrWYw8d2830">🔎</a><br>
+<strong>web.ma.utexas.edu</strong> | Ordinal Variables <a href="https://web.ma.utexas.edu/users/mks/statmistakes/ordinal.html">🔎</a></p>
+]]></content>
+		</item>
+		
+	</channel>
+</rss>
