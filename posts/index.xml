@@ -6,8 +6,68 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Tue, 07 Jul 2020 17:10:09 -0300</lastBuildDate>
+		<lastBuildDate>Wed, 08 Jul 2020 17:07:28 -0300</lastBuildDate>
 		<atom:link href="https://thalesbr.uno/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Numerical Variables</title>
+			<link>https://thalesbr.uno/posts/numerical-variables/</link>
+			<pubDate>Wed, 08 Jul 2020 17:07:28 -0300</pubDate>
+			
+			<guid>https://thalesbr.uno/posts/numerical-variables/</guid>
+			<description>Numerical variables, also known as quantitative variables, are the type of data that represent something measurable or countable like frequency, measurement, etc. Another attribute of numerical variables is that they are always numbers that can be placed in a meaningful order with consistent intervals.
+As examples of quantitative variables we may mention:
+ Weight Height Sales Production units Movie Ratings  Discrete and continuous Numerical variables may be either discrete or continuous.</description>
+			<content type="html"><![CDATA[<p>Numerical variables, also known as quantitative variables, are the type of data that represent something measurable or countable like frequency, measurement, etc. Another attribute of numerical variables is that they are always numbers that can be placed in a meaningful order with consistent intervals.</p>
+<p>As examples of quantitative variables we may mention:</p>
+<ul>
+<li>Weight</li>
+<li>Height</li>
+<li>Sales</li>
+<li>Production units</li>
+<li>Movie Ratings</li>
+</ul>
+<h2 id="discrete-and-continuous">Discrete and continuous</h2>
+<p>Numerical variables may be either discrete or continuous.</p>
+<p>Discrete values are the result of counting, like when we count how many goals a football team has scored in a season. Here, the data take certain numerical values, like 60, 65, 72, and so on.</p>
+<p>On the other hand, continuous values are the result of a measurement. For instance, we may measure the weights in kilograms of football team players, and the data will assume continuous values inside a range, like 84.1kg, 74.89483kg.</p>
+<h2 id="buckets-and-bins">Buckets and bins</h2>
+<p>Buckets and bins are the way we may organize the numerical data collected in a meaningful order with consistent intervals to analyze and make insights from them. For example, we might collect the number of movies produced in the 20th Century and put them in buckets of 10 years, and as result, we could see the evolution of the Movie Industry in the last century.</p>
+<p>But in this article, we will demonstrate a bit of numerical data using the Kaggle <a href="https://www.kaggle.com/lava18/google-play-store-apps">Google Play Store Apps</a> dataset from <a href="https://www.kaggle.com/lava18">Lavanya Gupta</a> as we did in the article about <a href="https://thalesbr.uno/posts/categorical-variables/">Categorical Variables</a>.</p>
+<p>Using pandas, we will load the dataset, but only the Rating column, which is a typical numerical variable. The users rated the Apps from 1.0 to 5.0.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="kn">as</span> <span class="nn">px</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&#34;./data/googleplaystore.csv&#34;</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Rating&#39;</span><span class="p">])</span>
+
+<span class="c1"># Drop missing values</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">ratings</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Rating</span>
+
+<span class="c1"># Drop a outline rating of 19.0 (from some error)</span>
+<span class="n">ratings</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="mi">10472</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="c1"># Plot a histogram</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">ratings</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Rating&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Google Play Store Apps Ratings&#39;</span><span class="p">,</span> <span class="n">template</span><span class="o">=</span><span class="s2">&#34;simple_white&#34;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div><figure>
+    <img src="/img/numerical-variables-histogram.png"
+         alt="Histogram"/> 
+</figure>
+
+<h2 id="histogram">Histogram</h2>
+<p>The chart we see above is a Histogram, which seems like the Bar Chart we&rsquo;ve plotted in the Categorical Variable post, but actually they have some important differences. In a Histogram there is no space between the bars, and the intervals are equally spaced, as expected to numerical values.</p>
+<p>The shape of the histogram already gives us useful information. The histogram above is left-skewed (it has a tail to the left), so we may conclude that most Apps were well evaluated because the highest rectangles are on the right side of the histogram, where we have the highest rates (between 4.0 and 5.0).</p>
+<p>Other shapes a histogram can have are right skew, symmetric, bimodal, uniform. Perhaps we will see more examples of histogram shapes in the next posts!</p>
+<h2 id="references">References</h2>
+<p><strong>courses.lumenlearning.com</strong> | 1.2 Data: Quantitative Data &amp; Qualitative Data <a href="https://courses.lumenlearning.com/odessa-introstats1-1/chapter/sampling-and-data/">🔎</a><br>
+<strong>online.stat.psu.edu</strong> | 1.1.1 - Categorical &amp; Quantitative Variables <a href="https://online.stat.psu.edu/stat200/lesson/1/1.1/1.1.1">🔎</a><br>
+<strong>YouTube</strong> | Brandon Foltz | Statistics 101: Descriptive Statistics, Histograms
+<a href="https://www.youtube.com/watch?v=zC3GaPBJ4c4">🔎</a></p>
+]]></content>
+		</item>
 		
 		<item>
 			<title>Categorical Variables</title>

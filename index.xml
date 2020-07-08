@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 07 Jul 2020 17:10:09 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2020 17:07:28 -0300</lastBuildDate>
     
 	<atom:link href="https://thalesbr.uno/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Numerical Variables</title>
+      <link>https://thalesbr.uno/posts/numerical-variables/</link>
+      <pubDate>Wed, 08 Jul 2020 17:07:28 -0300</pubDate>
+      
+      <guid>https://thalesbr.uno/posts/numerical-variables/</guid>
+      <description>Numerical variables, also known as quantitative variables, are the type of data that represent something measurable or countable like frequency, measurement, etc. Another attribute of numerical variables is that they are always numbers that can be placed in a meaningful order with consistent intervals.
+As examples of quantitative variables we may mention:
+ Weight Height Sales Production units Movie Ratings  Discrete and continuous Numerical variables may be either discrete or continuous.</description>
+    </item>
     
     <item>
       <title>Categorical Variables</title>
