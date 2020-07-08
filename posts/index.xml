@@ -197,7 +197,7 @@ As an example of a categorical variable we may mention Nationality having values
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div><figure>
     <img src="/img/categorical-variables-bar-chart.png"
-         alt="Portrait"/> 
+         alt="Bar Chart"/> 
 </figure>
 
 <p>So, in this article we have seen a bit about Categorical Variables or Nominal Variables, which is a pretty usual data type we face in Statistics, Data Analysis, Machine Learning, and so on. It was just an introductory content, but we may cover it a little deeper in upcoming posts.</p>
