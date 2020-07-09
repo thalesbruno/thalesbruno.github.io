@@ -6,8 +6,50 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Wed, 08 Jul 2020 17:07:28 -0300</lastBuildDate>
+		<lastBuildDate>Thu, 09 Jul 2020 20:42:13 -0300</lastBuildDate>
 		<atom:link href="https://thalesbr.uno/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Don&#39;t use Pie Charts</title>
+			<link>https://thalesbr.uno/posts/pie-charts/</link>
+			<pubDate>Thu, 09 Jul 2020 20:42:13 -0300</pubDate>
+			
+			<guid>https://thalesbr.uno/posts/pie-charts/</guid>
+			<description>Despite the clickbait title, this is not an article to be polemic or say universal truths, but just an invitation to think about it.
+A pie chart, sometimes called a pizza chart, is a chart in a format that seems like a - guess what? - pie, i.e., a round shape divided into slices. According to this article:
+ A pie chart is a circular graph that shows the relative contribution that different categories contribute to an overall total.</description>
+			<content type="html"><![CDATA[<p>Despite the clickbait title, this is not an article to be polemic or say universal truths, but just an invitation to think about it.</p>
+<p>A pie chart, sometimes called a pizza chart, is a chart in a format that seems like a - guess what? - pie, i.e., a round shape divided into slices. According to this <a href="https://www2.le.ac.uk/offices/ld/all-resources/numerical-data/pie-charts">article</a>:</p>
+<blockquote>
+<p><em>A pie chart is a circular graph that shows the relative contribution that different categories contribute to an overall total.</em></p>
+</blockquote>
+<p>So, each piece of the chart has its width defined for its proportional value into an overall total.</p>
+<p>Let&rsquo;s take a look at an example.</p>
+<figure>
+    <img src="/img/pie-charts-simple.png"
+         alt="Simple pie chart"/> 
+</figure>
+
+<p>We see it&rsquo;s not a bad look chart for sure. Actually, it could be a pretty evident option if we have some category variable to analyze and plot. But the point <a href="https://verstaresearch.com/blog/why-you-should-avoid-pie-charts/">many people say</a> about avoiding them is because pie charts may don&rsquo;t do a good job showing the proportions of the parts vs. the whole or even if a piece is greater or less than the others if they have the same size, etc.</p>
+<p>When the number of categories increases the problem seems clear:</p>
+<figure>
+    <img src="/img/pie-charts-complex.png"
+         alt="Pie chart with many categories"/> 
+</figure>
+
+<p>A bar chart plotting the same data:</p>
+<figure>
+    <img src="/img/pie-charts-bar.png"
+         alt="Bar plot"/> 
+</figure>
+
+<p>Then, as we may see, pie charts are a bit controversial and should be avoided in most cases. Tough with a few categories, maybe only two, they could not be a terrible choice as well. What do you think?</p>
+<h2 id="references">References</h2>
+<p>Pie Charts in Python <a href="https://plotly.com/python/pie-charts/">🔎</a>
+University of Leicester | Pie charts <a href="https://www2.le.ac.uk/offices/ld/all-resources/numerical-data/pie-charts">🔎</a>
+Why You Should Avoid Pie Charts <a href="https://verstaresearch.com/blog/why-you-should-avoid-pie-charts/">🔎</a></p>
+]]></content>
+		</item>
 		
 		<item>
 			<title>Numerical Variables</title>
