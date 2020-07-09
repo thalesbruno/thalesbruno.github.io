@@ -11,10 +11,10 @@
 		
 		<item>
 			<title>Don&#39;t use Pie Charts</title>
-			<link>https://thalesbr.uno/posts/pie-charts/</link>
+			<link>https://thalesbr.uno/posts/dont-use-pie-charts/</link>
 			<pubDate>Thu, 09 Jul 2020 20:42:13 -0300</pubDate>
 			
-			<guid>https://thalesbr.uno/posts/pie-charts/</guid>
+			<guid>https://thalesbr.uno/posts/dont-use-pie-charts/</guid>
 			<description>Despite the clickbait title, this is not an article to be polemic or say universal truths, but just an invitation to think about it.
 A pie chart, sometimes called a pizza chart, is a chart in a format that seems like a - guess what? - pie, i.e., a round shape divided into slices. According to this article:
  A pie chart is a circular graph that shows the relative contribution that different categories contribute to an overall total.</description>
@@ -45,9 +45,9 @@ A pie chart, sometimes called a pizza chart, is a chart in a format that seems l
 
 <p>Then, as we may see, pie charts are a bit controversial and should be avoided in most cases. Tough with a few categories, maybe only two, they could not be a terrible choice as well. What do you think?</p>
 <h2 id="references">References</h2>
-<p>Pie Charts in Python <a href="https://plotly.com/python/pie-charts/">🔎</a>
-University of Leicester | Pie charts <a href="https://www2.le.ac.uk/offices/ld/all-resources/numerical-data/pie-charts">🔎</a>
-Why You Should Avoid Pie Charts <a href="https://verstaresearch.com/blog/why-you-should-avoid-pie-charts/">🔎</a></p>
+<p>Pie Charts in Python <a href="https://plotly.com/python/pie-charts/">🔎</a></p>
+<p>University of Leicester | Pie charts <a href="https://www2.le.ac.uk/offices/ld/all-resources/numerical-data/pie-charts">🔎</a></p>
+<p>Why You Should Avoid Pie Charts <a href="https://verstaresearch.com/blog/why-you-should-avoid-pie-charts/">🔎</a></p>
 ]]></content>
 		</item>
 		
