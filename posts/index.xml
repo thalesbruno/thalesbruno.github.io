@@ -6,8 +6,28 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Thu, 09 Jul 2020 20:42:13 -0300</lastBuildDate>
+		<lastBuildDate>Sat, 11 Jul 2020 20:05:41 -0300</lastBuildDate>
 		<atom:link href="https://thalesbr.uno/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Weeknotes #1: the Beginning</title>
+			<link>https://thalesbr.uno/posts/weeknotes-1-the-beginning/</link>
+			<pubDate>Sat, 11 Jul 2020 20:05:41 -0300</pubDate>
+			
+			<guid>https://thalesbr.uno/posts/weeknotes-1-the-beginning/</guid>
+			<description>I have decided to begin this weeknotes series here in my blog to keep me writing. As I say in the About section, I am trying to change my career, and this is such a really big project that will affect all my life and even the life of people around me. So I am dedicating time and energy to make this possible, and it will.
+English
+Last week was one more week of English learning and English improvement as well.</description>
+			<content type="html"><![CDATA[<p>I have decided to begin this weeknotes series here in my blog to keep me writing.  As I say in the About section, I am trying to change my career, and this is such a really big project that will affect all my life and even the life of people around me. So I am dedicating time and energy to make this possible, and it will.</p>
+<p><strong>English</strong><br>
+Last week was one more week of English learning and English improvement as well. I think I am doing this very well since I am not spending any money on courses, lessons, or minutes of conversation with natives. My learning routine includes YouTube lessons, Movies and TV Series with English audio and subtitles, English TV Channels, and all Data Science content I am stuying in English.</p>
+<p><strong>Entertainment</strong><br>
+I watched a few things last week as usual. Interstellar was the most significant for sure! I fell in love with the Sci-Fi genre since I watched Dark, and Interstellar already became one of my favorite films ever. I just finished a short film on YouTube right now called Voskhod, the same genre, pretty good, and what is better: it&rsquo;s from a sci-fi brand called DUST, and there is a lot of content in their YouTube Channel. So I think I will talk about them in every weeknote for a long time.</p>
+<p><strong>Machine Learning</strong><br>
+Finally, I have done my fourth course at Kaggle: Intermediary Machine Learning. I am quite excited about this stuff and now I am going to begin with the competitions. At the same time, I am studying Statistics on this amazing YouTube Playlist.</p>
+<p>Enough weeknote for now. Next week I am going to be back.</p>
+]]></content>
+		</item>
 		
 		<item>
 			<title>Don&#39;t use Pie Charts</title>
