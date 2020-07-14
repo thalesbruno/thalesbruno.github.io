@@ -6,8 +6,98 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Sat, 11 Jul 2020 20:05:41 -0300</lastBuildDate>
+		<lastBuildDate>Tue, 14 Jul 2020 15:49:30 -0300</lastBuildDate>
 		<atom:link href="https://thalesbr.uno/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Mean, Median, and Mode</title>
+			<link>https://thalesbr.uno/posts/mean-median-mode/</link>
+			<pubDate>Tue, 14 Jul 2020 15:49:30 -0300</pubDate>
+			
+			<guid>https://thalesbr.uno/posts/mean-median-mode/</guid>
+			<description>In this article, we are talking about the common methods to measure the central tendency of the data, that is a way to explain our data in some manner. Although these measurements are quite simple, they are a foundation for a lot of other more complex measurements.
+We will use this fake list of grades of a class below to demonstrate the concepts:
+   Grades     9.</description>
+			<content type="html"><![CDATA[<p>In this article, we are talking about the common methods to <strong>measure the central tendency of the data</strong>, that is a way to explain our data in some manner. Although these measurements are quite simple, they are a foundation for a lot of other more complex measurements.</p>
+<p>We will use this fake list of grades of a class below to demonstrate the concepts:</p>
+<table>
+<thead>
+  <tr>
+    <th>Grades</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>9.2</td>
+  </tr>
+  <tr>
+    <td>7.5</td>
+  </tr>
+  <tr>
+    <td>8</td>
+  </tr>
+  <tr>
+     <td>9</td>
+  </tr>
+  <tr>
+     <td>8.5</td>
+  </tr>
+  <tr>
+     <td>8</td>
+  </tr>
+  <tr>
+     <td>2.5</td>
+  </tr>
+</tbody>
+</table>
+<p>We create a Python variable to store the grades:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">grades</span> <span class="o">=</span> <span class="p">[</span><span class="mf">9.2</span><span class="p">,</span> <span class="mf">7.5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mf">8.5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">]</span>
+</code></pre></div><h2 id="mean">Mean</h2>
+<p>The first one is the <strong>mean</strong>, which is the arithmetic average of the data. To calculate the mean of a set of numeric data, we take the sum of all observations divided by the number of observations.</p>
+<p>In Python:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+
+<span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="n">xs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+  <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+</code></pre></div><p>So, applying in our grades data: <code>mean(grades)</code> gives us <code>~7.52</code>.</p>
+<h2 id="median">Median</h2>
+<p>The second one is the <strong>median</strong>, which gives us something more <em>positional</em>. The median is the exact central value of a data, so to calculate it we need to:</p>
+<ul>
+<li>Sort data from smaller to largest, and</li>
+<li>If ODD length: pick up the middle value</li>
+<li>If EVEN length: calculate the mean of the two middle values</li>
+</ul>
+<p>So, in Python could be like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">median</span><span class="p">(</span><span class="n">xs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+  <span class="n">s</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+  <span class="c1"># If odd lenght, just pick up the middle value</span>
+  <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">xs</span><span class="p">[</span><span class="n">p</span><span class="p">]</span>
+  <span class="c1"># If even lenght, take the mean of the left and right middle values</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">l_p</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">r_p</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="n">mid_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">l_p</span><span class="p">,</span> <span class="n">r_p</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">mean</span><span class="p">(</span><span class="n">mid_values</span><span class="p">)</span>
+</code></pre></div><p>This way, the grades sorted looks like this: <code>[2.5, 7.5, 8, 8, 8.5, 9, 9.2]</code> and their median, <code>median(grades)</code>, is <code>8</code>.</p>
+<h2 id="mode">Mode</h2>
+<p>Finally, we have the <strong>mode</strong>, i.e., the observation that occurs the most in a dataset. Thus, a dataset may have <em>one</em>, <em>multiple</em>, or even <em>none</em> mode.</p>
+<p>Python mode function:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="k">def</span> <span class="nf">mode</span><span class="p">(</span><span class="n">xs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]:</span>
+  <span class="n">counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">[</span><span class="n">x_i</span> <span class="k">for</span> <span class="n">x_i</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">counter</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="nb">max</span><span class="p">(</span><span class="n">counter</span><span class="o">.</span><span class="n">values</span><span class="p">())]</span>
+</code></pre></div><p>The grade that occurs the most in our dataset is <code>[8]</code> as we can see calling <code>mode(grades)</code></p>
+<h2 id="python-mean-median-and-mode">Python mean, median, and mode</h2>
+<p>In this article, we made some Python code to illustrate our measurements, just as didactic purposes. By the way, we already have functions in Python libraries that make the job. Bellow, some of them:</p>
+<ul>
+<li>Mean: <a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html">numpy.mean</a></li>
+<li>Median: <a href="https://numpy.org/doc/stable/reference/generated/numpy.median.html?highlight=median#numpy.median">numpy.median</a></li>
+<li>Mode: <a href="https://docs.python.org/3.4/library/statistics.html#statistics.mode">statistics.mode</a></li>
+</ul>
+]]></content>
+		</item>
 		
 		<item>
 			<title>Weeknotes #1: the Beginning</title>
