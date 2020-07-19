@@ -6,8 +6,28 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Tue, 14 Jul 2020 15:49:30 -0300</lastBuildDate>
+		<lastBuildDate>Sun, 19 Jul 2020 17:53:17 -0300</lastBuildDate>
 		<atom:link href="https://thalesbr.uno/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Weeknotes #2: Back to day work, some instability, and NLP</title>
+			<link>https://thalesbr.uno/posts/weeknotes-2-back-to-work-instability-nlp/</link>
+			<pubDate>Sun, 19 Jul 2020 17:53:17 -0300</pubDate>
+			
+			<guid>https://thalesbr.uno/posts/weeknotes-2-back-to-work-instability-nlp/</guid>
+			<description>The last week wasn&amp;rsquo;t the most productive week in my life for sure&amp;hellip; I have come back to work after a quite short 10-day vacation and I think that my anxiety about the return pushed me down.
+Entertainment Not much entertainment last week for me, but I watched English Football on most days. Since the return of the Football in England after the Pandemic outbreak, there are matches almost every single day.</description>
+			<content type="html"><![CDATA[<p>The last week wasn&rsquo;t the most productive week in my life for sure&hellip; I have come back to work after a quite short 10-day vacation and I think that my anxiety about the return pushed me down.</p>
+<h2 id="entertainment">Entertainment</h2>
+<p>Not much entertainment last week for me, but I watched English Football on most days. Since the return of the Football in England after the Pandemic outbreak, there are matches almost every single day.</p>
+<h2 id="english">English</h2>
+<p>Nothing special in my English study. I didn&rsquo;t watch movies or TV shows this week, but I still have seen YouTube channels and news.</p>
+<h2 id="data-science">Data Science</h2>
+<p>I have made my first contact with Natural Language Processing (NLP) and I like it pretty much. I think it is an incredible area with so many possibilities&hellip; Next week I will see a bit more contents and have some practice to stay more familiar with NLP. I keep looking for an area to chose and stay focused on, and I am not sure about anyone yet, but NLP is one of the options absolutely.</p>
+<h2 id="next-week">Next Week</h2>
+<p>For the next week, I hope I can do things better. I am not happy with my productivity in the past week, but I know that it is normal some instability among the time, and I need to keep going and don&rsquo;t allow any frustration or depressed feelings to let me down.</p>
+]]></content>
+		</item>
 		
 		<item>
 			<title>Mean, Median, and Mode</title>
@@ -106,15 +126,14 @@ We will use this fake list of grades of a class below to demonstrate the concept
 			
 			<guid>https://thalesbr.uno/posts/weeknotes-1-the-beginning/</guid>
 			<description>I have decided to begin this weeknotes series here in my blog to keep me writing. As I say in the About section, I am trying to change my career, and this is such a really big project that will affect all my life and even the life of people around me. So I am dedicating time and energy to make this possible, and it will.
-English
-Last week was one more week of English learning and English improvement as well.</description>
+English Last week was one more week of English learning and English improvement as well.</description>
 			<content type="html"><![CDATA[<p>I have decided to begin this weeknotes series here in my blog to keep me writing.  As I say in the About section, I am trying to change my career, and this is such a really big project that will affect all my life and even the life of people around me. So I am dedicating time and energy to make this possible, and it will.</p>
-<p><strong>English</strong><br>
-Last week was one more week of English learning and English improvement as well. I think I am doing this very well since I am not spending any money on courses, lessons, or minutes of conversation with natives. My learning routine includes YouTube lessons, Movies and TV Series with English audio and subtitles, English TV Channels, and all Data Science content I am stuying in English.</p>
-<p><strong>Entertainment</strong><br>
-I watched a few things last week as usual. Interstellar was the most significant for sure! I fell in love with the Sci-Fi genre since I watched Dark, and Interstellar already became one of my favorite films ever. I just finished a short film on YouTube right now called Voskhod, the same genre, pretty good, and what is better: it&rsquo;s from a sci-fi brand called DUST, and there is a lot of content in their YouTube Channel. So I think I will talk about them in every weeknote for a long time.</p>
-<p><strong>Machine Learning</strong><br>
-Finally, I have done my fourth course at Kaggle: Intermediary Machine Learning. I am quite excited about this stuff and now I am going to begin with the competitions. At the same time, I am studying Statistics on this amazing YouTube Playlist.</p>
+<h2 id="english">English</h2>
+<p>Last week was one more week of English learning and English improvement as well. I think I am doing this very well since I am not spending any money on courses, lessons, or minutes of conversation with natives. My learning routine includes YouTube lessons, Movies and TV Series with English audio and subtitles, English TV Channels, and all Data Science content I am stuying in English.</p>
+<h2 id="entertainment">Entertainment</h2>
+<p>I watched a few things last week as usual. Interstellar was the most significant for sure! I fell in love with the Sci-Fi genre since I watched Dark, and Interstellar already became one of my favorite films ever. I just finished a short film on YouTube right now called Voskhod, the same genre, pretty good, and what is better: it&rsquo;s from a sci-fi brand called DUST, and there is a lot of content in their YouTube Channel. So I think I will talk about them in every weeknote for a long time.</p>
+<h2 id="machine-learning">Machine Learning</h2>
+<p>Finally, I have done my fourth course at Kaggle: Intermediary Machine Learning. I am quite excited about this stuff and now I am going to begin with the competitions. At the same time, I am studying Statistics on this amazing YouTube Playlist.</p>
 <p>Enough weeknote for now. Next week I am going to be back.</p>
 ]]></content>
 		</item>
