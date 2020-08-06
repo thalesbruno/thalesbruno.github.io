@@ -18,7 +18,7 @@
       <pubDate>Thu, 06 Aug 2020 08:23:11 -0300</pubDate>
       
       <guid>https://thalesbr.uno/posts/handling-missing-values/</guid>
-      <description>A key part of data science is to clean the data before work with it. For example, it&amp;rsquo;s common finding missing values in a dataset, either because that data was not collected or don&amp;rsquo;t exist though.
+      <description>Photo by Emily Morter on Unsplash A key part of data science is to clean the data before work with it. For example, it&amp;rsquo;s common finding missing values in a dataset, either because that data was not collected or don&amp;rsquo;t exist though.
 Depends on the data we have missing, or even why we don&amp;rsquo;t have it, we handle it in different ways. So, we need to analyze each dataset column carefully and decide whether we will remove all rows with missing values, or remove the column itself, or fill the cells with some data (and which data could be).</description>
     </item>
     

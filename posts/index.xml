@@ -15,9 +15,11 @@
 			<pubDate>Thu, 06 Aug 2020 08:23:11 -0300</pubDate>
 			
 			<guid>https://thalesbr.uno/posts/handling-missing-values/</guid>
-			<description>A key part of data science is to clean the data before work with it. For example, it&amp;rsquo;s common finding missing values in a dataset, either because that data was not collected or don&amp;rsquo;t exist though.
+			<description>Photo by Emily Morter on Unsplash A key part of data science is to clean the data before work with it. For example, it&amp;rsquo;s common finding missing values in a dataset, either because that data was not collected or don&amp;rsquo;t exist though.
 Depends on the data we have missing, or even why we don&amp;rsquo;t have it, we handle it in different ways. So, we need to analyze each dataset column carefully and decide whether we will remove all rows with missing values, or remove the column itself, or fill the cells with some data (and which data could be).</description>
-			<content type="html"><![CDATA[<p>A key part of data science is to clean the data before work with it. For example, it&rsquo;s common finding missing values in a dataset, either because that data was not collected or don&rsquo;t exist though.</p>
+			<content type="html"><![CDATA[<img src="/img/emily-morter-8xAA0f9yQnE-unsplash.jpg">
+Photo by <a href="https://unsplash.com/@emilymorter?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Emily Morter</a> on <a href="https://unsplash.com/s/photos/missing?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
+<p>A key part of data science is to clean the data before work with it. For example, it&rsquo;s common finding missing values in a dataset, either because that data was not collected or don&rsquo;t exist though.</p>
 <p>Depends on the data we have missing, or even why we don&rsquo;t have it, we handle it in different ways. So, we need to analyze each dataset column carefully and decide whether we will remove all rows with missing values, or remove the column itself, or fill the cells with some data (and which data could be).</p>
 <h2 id="count-missing-values">Count missing values</h2>
 <p>Before handle the missing values, we should know exactly how much of them we have. The code below counts all missing values in a pandas DataFrame <code>df</code> and print it all by column.</p>
