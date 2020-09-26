@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>datascience on thalesbruno</title>
-    <link>https://thalesbr.uno/tags/datascience/</link>
+    <link>https://thalesbruno.github.io/tags/datascience/</link>
     <description>Recent content in datascience on thalesbruno</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Thu, 06 Aug 2020 08:23:11 -0300</lastBuildDate>
     
-	<atom:link href="https://thalesbr.uno/tags/datascience/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://thalesbruno.github.io/tags/datascience/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Handling Missing Values</title>
-      <link>https://thalesbr.uno/posts/handling-missing-values/</link>
+      <link>https://thalesbruno.github.io/posts/handling-missing-values/</link>
       <pubDate>Thu, 06 Aug 2020 08:23:11 -0300</pubDate>
       
-      <guid>https://thalesbr.uno/posts/handling-missing-values/</guid>
+      <guid>https://thalesbruno.github.io/posts/handling-missing-values/</guid>
       <description>Photo by Emily Morter on Unsplash A key part of data science is to clean the data before work with it. For example, it&amp;rsquo;s common finding missing values in a dataset, either because that data was not collected or don&amp;rsquo;t exist though.
 Depends on the data we have missing, or even why we don&amp;rsquo;t have it, we handle it in different ways. So, we need to analyze each dataset column carefully and decide whether we will remove all rows with missing values, or remove the column itself, or fill the cells with some data (and which data could be).</description>
     </item>
