@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 06 Aug 2020 08:23:11 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2020 18:39:37 -0300</lastBuildDate>
     
 	<atom:link href="https://thalesbruno.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Natural Language Processing</title>
+      <link>https://thalesbruno.github.io/posts/natural-language-processing/</link>
+      <pubDate>Mon, 23 Nov 2020 18:39:37 -0300</pubDate>
+      
+      <guid>https://thalesbruno.github.io/posts/natural-language-processing/</guid>
+      <description>Photo by Emily Morter on Unsplash Voltando a escrever um post depois de algum tempo para falar de Natural Language Processing (NLP), área que comecei a estudar no primeiro semestre desse ano, gostei e que agora tornou-se oficialmente minha área de pesquisa em meu recém iniciado Mestrado em Ciência de Dados na UFBA.
+ Natural Processing Language é uma subarea da linguística, ciência da computação e inteligência artificial[1], que se vale de conceitos e técnicas de cada um desses campos para o estudo e criação de mecanismos de processamento e análise de textos em linguagem natural.</description>
+    </item>
     
     <item>
       <title>Handling Missing Values</title>

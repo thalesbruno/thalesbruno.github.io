@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 06 Aug 2020 08:23:11 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2020 18:39:37 -0300</lastBuildDate>
     
 	<atom:link href="https://thalesbruno.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,9 +15,18 @@
     <item>
       <title>datascience</title>
       <link>https://thalesbruno.github.io/tags/datascience/</link>
-      <pubDate>Thu, 06 Aug 2020 08:23:11 -0300</pubDate>
+      <pubDate>Mon, 23 Nov 2020 18:39:37 -0300</pubDate>
       
       <guid>https://thalesbruno.github.io/tags/datascience/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nlp</title>
+      <link>https://thalesbruno.github.io/tags/nlp/</link>
+      <pubDate>Mon, 23 Nov 2020 18:39:37 -0300</pubDate>
+      
+      <guid>https://thalesbruno.github.io/tags/nlp/</guid>
       <description></description>
     </item>
     
