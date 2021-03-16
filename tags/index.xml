@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 23 Nov 2020 18:39:37 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 16 Mar 2021 05:22:28 -0300</lastBuildDate>
     
 	<atom:link href="https://thalesbruno.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>bots</title>
+      <link>https://thalesbruno.github.io/tags/bots/</link>
+      <pubDate>Tue, 16 Mar 2021 05:22:28 -0300</pubDate>
+      
+      <guid>https://thalesbruno.github.io/tags/bots/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://thalesbruno.github.io/tags/javascript/</link>
+      <pubDate>Tue, 16 Mar 2021 05:22:28 -0300</pubDate>
+      
+      <guid>https://thalesbruno.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nodejs</title>
+      <link>https://thalesbruno.github.io/tags/nodejs/</link>
+      <pubDate>Tue, 16 Mar 2021 05:22:28 -0300</pubDate>
+      
+      <guid>https://thalesbruno.github.io/tags/nodejs/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>datascience</title>

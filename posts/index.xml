@@ -6,8 +6,117 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Mon, 23 Nov 2020 18:39:37 -0300</lastBuildDate>
+		<lastBuildDate>Tue, 16 Mar 2021 05:22:28 -0300</lastBuildDate>
 		<atom:link href="https://thalesbruno.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Criando um Bot do Telegram com Node.js</title>
+			<link>https://thalesbruno.github.io/posts/post/</link>
+			<pubDate>Tue, 16 Mar 2021 05:22:28 -0300</pubDate>
+			
+			<guid>https://thalesbruno.github.io/posts/post/</guid>
+			<description>Olá, pessoal. Este é meu primeiro artigo por aqui e nele vamos aprender a fazer um Bot do Telegram que monitora serviços através de requisições HTTP. Fiz em Javascript/Node.js porque era a linguagem que eu vinha estudando ultimamente então foi uma boa oportunidade de aplicá-la e eu gostei do resultado.
+As tecnologias trabalhadas aqui foram o Node.js, o Telegraf, que é um framework para construir Bots do Telegram em Node, o Axios, um cliente HTTP em Javascript, e o Docker para dar um toque mais profissional, rs.</description>
+			<content type="html"><![CDATA[<p>Olá, pessoal. Este é meu primeiro artigo por aqui e nele vamos aprender a fazer um Bot do Telegram que monitora serviços através de requisições HTTP. Fiz em Javascript/Node.js porque era a linguagem que eu vinha estudando ultimamente então foi uma boa oportunidade de aplicá-la e eu gostei do resultado.</p>
+<p>As tecnologias trabalhadas aqui foram o Node.js, o <a href="https://telegraf.js.org/#/">Telegraf</a>, que é um framework para construir Bots do Telegram em Node, o <a href="https://github.com/axios/axios">Axios</a>, um cliente HTTP em Javascript, e o Docker para dar um toque mais profissional, rs. Tem também o próprio Telegram, naturalmente, onde vamos iniciar a criação do Bot e vê-lo funcionar.</p>
+<p>Acho que um bom ponto de partida é entrar no Telegram e criar nosso Bot. Poucas coisas na vida são mais fáceis que isso: basta procurar pela conta BotFather:</p>
+<p><img src="https://thepracticaldev.s3.amazonaws.com/i/hma51pv4cmt2b1donht3.png" alt="BotFather"></p>
+<p>Ao iniciar uma conversa com o Pai dos Bots, são exibidos os comandos disponíveis para interagir com ele. Digitamos ou clicamos em <code>/newbot</code>, definimos um nome e em seguida um <em>username</em>, que deve obrigatoriamente terminar em &lsquo;bot&rsquo;. Feito isso, nosso Bot estará criado e o BotFather disponibilizará um token de acesso que usaremos daqui pra frente para comandar nosso Bot. O BotFather nos aconselha a manter o token em segurança, já que ele pode ser usado por qualquer um para controlar nosso Bot.</p>
+<p><img src="https://thepracticaldev.s3.amazonaws.com/i/x5ycgcn4i81223k0euy7.png" alt="Bot Criado"></p>
+<p>Vamos agora ao Node.js. Primeiro, criamos um diretório raiz pro projeto e dentro dele o <code>/src</code> onde ficará o código Javascript:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mkdir -p telegram-bot/src
+<span class="nb">cd</span> telegram-bot
+</code></pre></div><p>Então, inicializamos o projeto&hellip;</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">npm init -y
+</code></pre></div><p>&hellip;e instalamos o módulo Telegraf</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">npm install telegraf
+</code></pre></div><p>Agora as primeiras linhas de código. Criamos um arquivo <code>index.js</code> em <code>./telegram-bot/src</code> que será o <em>entrypoint</em> do projeto:</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">Telegraf</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;telegraf&#39;</span><span class="p">)</span>
+
+<span class="kr">const</span> <span class="nx">bot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Telegraf</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">BOT_TOKEN</span><span class="p">)</span>
+
+<span class="nx">bot</span><span class="p">.</span><span class="nx">start</span><span class="p">((</span><span class="nx">ctx</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">reply</span><span class="p">(</span><span class="s2">&#34;Hello world&#34;</span><span class="p">))</span>
+
+<span class="nx">bot</span><span class="p">.</span><span class="nx">launch</span><span class="p">()</span>
+</code></pre></div><p>Nele, primeiro importamos o módulo Telegraf, então instanciamos um objeto bot, passando um único argumento, <code>process.env.BOT_TOKEN</code> (falaremos dele no próximo parágrafo). Em seguida, criamos nossa primeira &ldquo;rota&rdquo;, <code>bot.start()</code>, aqui estabelecemos o que o Bot fará ao receber o comando <code>/start</code> (isso acontece ao iniciarmos pela primeira vez uma conversa com ele ou, após isso, digitarmos <code>/start</code> no chat). Nesta versão inicial de nosso código, ele apenas responderá com um &ldquo;Hello world&rdquo;. Por fim, na última linha temos <code>bot.launch()</code> que inicializa o Bot.</p>
+<p>Sobre o <code>process.env.BOT_TOKEN</code>, o <code>process.env</code> retorna um objeto contendo as variáveis de ambiente do usuário, e destas estamos pegando a que nos interessa que é a BOT_TOKEN. Uma alternativa seria passar o token diretamente no código, o que é completamente desaconselhável. Agora falta criarmos a variável de ambiente BOT_TOKEN e atribuir a ela o token que o BotFather nos passou instantes atrás. Neste momento vamos apenas exportar nossa variável no terminal (Linux/MacOS), mas depois, quando subirmos nosso projeto em uma imagem Docker, vamos usar uma solução mais elegante.</p>
+<p>Então, no terminal basta executar:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">BOT_TOKEN</span><span class="o">=</span>&lt;O_TOKEN_QUE_O_BOTFATHER_NOS_PASSOU&gt;
+</code></pre></div><p>Nosso Bot já está pronto para ser executado! No diretório raiz, rodamos:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">node src/index.js
+</code></pre></div><p>No Telegram, já podemos interagir com ele:</p>
+<p><img src="https://thepracticaldev.s3.amazonaws.com/i/pe3dk6rppezzeultcazf.png" alt="Bot start"></p>
+<p>O que precisamos implementar agora é uma rota <code>status</code> que chamará um módulo responsável por fazer a requisição ao serviço, retornando seu status que, por sua vez, gerará uma resposta de nosso Bot.</p>
+<p>Vamos instalar o axios, que é um módulo cliente HTTP.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">npm install axios
+</code></pre></div><p>Novo arquivo<code>src/status.js</code>, bem simplezinho, checando o status da página inicial do Google:</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;axios&#39;</span><span class="p">)</span>
+
+<span class="kr">const</span> <span class="nx">status</span> <span class="o">=</span> <span class="nx">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">await</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;https://www.google.com/&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">timeout</span><span class="o">:</span> <span class="mi">30000</span> <span class="p">})</span>
+    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">error</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">status</span>
+</code></pre></div><p>No arquivo principal do projeto, <code>src/index.js</code>, vamos importar o módulo status e criar a rota que o chamará:</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">status</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./status&#39;</span><span class="p">)</span>
+
+<span class="p">...</span>
+
+<span class="nx">bot</span><span class="p">.</span><span class="nx">command</span><span class="p">(</span><span class="s1">&#39;status&#39;</span><span class="p">,</span> <span class="nx">async</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">status</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">await</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">reply</span><span class="p">(</span><span class="sb">`Google service: ✅`</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">await</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">reply</span><span class="p">(</span><span class="sb">`Google service: ❌`</span><span class="p">)</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div><p>Projeto salvo, rodamos novamente o <code>node src/index.js</code> e vamos lá falar com nosso Bot:</p>
+<p><img src="https://thepracticaldev.s3.amazonaws.com/i/oa397tt7dgkrhcb73ow1.png" alt="Bot status"></p>
+<p>Prontinho! Se o serviço Google tiver fora do ar, o que é meio difícil, ele vai responder com o ❌.</p>
+<p>Vamos fazer um ajuste no <code>package.json</code> para rodarmos nossa aplicação com  <code>npm start</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="err">...</span>
+
+<span class="s2">&#34;scripts&#34;</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nt">&#34;start&#34;</span><span class="p">:</span> <span class="s2">&#34;node src/index.js&#34;</span>
+  <span class="p">}</span>
+
+<span class="err">...</span>
+</code></pre></div><p>Agora pra finalizar, vamos subir nosso projeto em Docker (e docker-compose)! Primeiro criamos um Dockerfile pra será o build de nossa imagem e depois um docker-compose.yml que subirá o serviço. São provavelmente os exemplos mais simples de <a href="https://docs.docker.com/engine/reference/builder/">Dockerfile</a> e <a href="https://docs.docker.com/compose/compose-file/">docker-compose</a> que vocês verão por aí:</p>
+<p>Dockerfile</p>
+<div class="highlight"><pre class="chroma"><code class="language-docker" data-lang="docker"><span class="k">FROM</span><span class="s"> node:12.7.0-alpine</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="k">WORKDIR</span><span class="s"> /app</span><span class="err">
+</span><span class="err"></span><span class="k">COPY</span> . .<span class="err">
+</span><span class="err"></span><span class="k">RUN</span> <span class="o">[</span><span class="s2">&#34;npm&#34;</span>, <span class="s2">&#34;install&#34;</span><span class="o">]</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="k">ENV</span> <span class="nv">BOT_TOKEN</span><span class="o">=</span>&lt;PUT_YOUR_TELEGRAM_TOKEN_BOT_HERE&gt;<span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="k">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&#34;npm&#34;</span><span class="p">,</span> <span class="s2">&#34;start&#34;</span><span class="p">]</span><span class="err">
+</span></code></pre></div><p>docker-compose.yml</p>
+<div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml"><span class="k">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">
+</span><span class="w"></span><span class="k">services</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">bot</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">build</span><span class="p">:</span><span class="w"> </span>.<span class="w">
+</span></code></pre></div><p>(Sim, é só isso). Lembrando que os dois arquivos devem estar na raiz do projeto, no Dockerfile colocamos ali em <code>ENV BOT_TOKEN</code> o mesmo token que já vínhamos usando.</p>
+<p>Agora vamos colocar nosso Bot no ar novamente, mas dessa vez usando <a href="https://docs.docker.com/compose/gettingstarted/">docker-compose</a>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker-compose up -d
+</code></pre></div><p>O <code>-d</code> é pra ele subir em background, liberando o promp do terminal. Pra parar o serviço é <code>docker-compose down</code>. Se fizer alguma modificação no código, é só rodar <code>docker-compose up -d --build</code> que ele subirá construindo uma nova imagem.</p>
+<p>Com o Bot no ar em Docker, podemos ir no Telegram novamente e continuar interagindo com nosso Bot!</p>
+<p><img src="https://thepracticaldev.s3.amazonaws.com/i/freeek44riannbdr9jrt.png" alt="Docker bot"></p>
+<p>Essa é uma versão bem simples e genérica, só pra ilustrar a implementação e o funcionamento. Pro artigo não ficar ainda maior, abstraí algumas explicações de códigos e comandos, mas coloquei os links com as referências de cada tecnologia. Qualquer dúvida é só dar um alô!</p>
+]]></content>
+		</item>
 		
 		<item>
 			<title>Natural Language Processing</title>

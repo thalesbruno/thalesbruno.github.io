@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on thalesbruno</title>
+    <link>https://thalesbruno.github.io/tags/javascript/</link>
+    <description>Recent content in javascript on thalesbruno</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 16 Mar 2021 05:22:28 -0300</lastBuildDate>
+    
+	<atom:link href="https://thalesbruno.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Criando um Bot do Telegram com Node.js</title>
+      <link>https://thalesbruno.github.io/posts/post/</link>
+      <pubDate>Tue, 16 Mar 2021 05:22:28 -0300</pubDate>
+      
+      <guid>https://thalesbruno.github.io/posts/post/</guid>
+      <description>Olá, pessoal. Este é meu primeiro artigo por aqui e nele vamos aprender a fazer um Bot do Telegram que monitora serviços através de requisições HTTP. Fiz em Javascript/Node.js porque era a linguagem que eu vinha estudando ultimamente então foi uma boa oportunidade de aplicá-la e eu gostei do resultado.
+As tecnologias trabalhadas aqui foram o Node.js, o Telegraf, que é um framework para construir Bots do Telegram em Node, o Axios, um cliente HTTP em Javascript, e o Docker para dar um toque mais profissional, rs.</description>
+    </item>
+    
+  </channel>
+</rss>

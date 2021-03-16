@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 23 Nov 2020 18:39:37 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 16 Mar 2021 05:22:28 -0300</lastBuildDate>
     
 	<atom:link href="https://thalesbruno.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Criando um Bot do Telegram com Node.js</title>
+      <link>https://thalesbruno.github.io/posts/post/</link>
+      <pubDate>Tue, 16 Mar 2021 05:22:28 -0300</pubDate>
+      
+      <guid>https://thalesbruno.github.io/posts/post/</guid>
+      <description>Olá, pessoal. Este é meu primeiro artigo por aqui e nele vamos aprender a fazer um Bot do Telegram que monitora serviços através de requisições HTTP. Fiz em Javascript/Node.js porque era a linguagem que eu vinha estudando ultimamente então foi uma boa oportunidade de aplicá-la e eu gostei do resultado.
+As tecnologias trabalhadas aqui foram o Node.js, o Telegraf, que é um framework para construir Bots do Telegram em Node, o Axios, um cliente HTTP em Javascript, e o Docker para dar um toque mais profissional, rs.</description>
+    </item>
     
     <item>
       <title>Natural Language Processing</title>
@@ -102,15 +112,6 @@ As examples of quantitative variables we may mention:
       <guid>https://thalesbruno.github.io/posts/categorical-variables/</guid>
       <description>A categorical variable (sometimes called a nominal variable) is a variable that can assume one of a limited number of possible values described as categories and there is no intrinsic ordering to the categories. It uses labels, names, or other descriptors (even numbers) to identify exclusive categories or types of things.
 As an example of a categorical variable we may mention Nationality having values like Brazilian, Canadian, French, etc., and we can see that there is no ordering between the values: we cannot say that Brazilian is higher than Canadian.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://thalesbruno.github.io/about/</link>
-      <pubDate>Tue, 23 Jun 2020 21:06:54 -0300</pubDate>
-      
-      <guid>https://thalesbruno.github.io/about/</guid>
-      <description>I’m from Salvador, Brazil. I have a Bachelor’s Degree in Computer Science and I have been working as an IT Analyst for more than 5 years as well as a Web Developer on my own. Now I am doing a Master&amp;rsquo;s Degree course in Data Science, in the Natural Processing Language (NLP) research area at Universidade Federal da Bahia, and I am really excited to learn and build a career in this area.</description>
     </item>
     
   </channel>
