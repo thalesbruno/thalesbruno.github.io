@@ -14,32 +14,12 @@
     
     <item>
       <title>Criando um Bot do Telegram com Node.js</title>
-      <link>https://thalesbruno.github.io/posts/post/</link>
+      <link>https://thalesbruno.github.io/posts/criando-bot-telegram-nodejs/</link>
       <pubDate>Tue, 16 Mar 2021 05:22:28 -0300</pubDate>
       
-      <guid>https://thalesbruno.github.io/posts/post/</guid>
+      <guid>https://thalesbruno.github.io/posts/criando-bot-telegram-nodejs/</guid>
       <description>Olá, pessoal. Este é meu primeiro artigo por aqui e nele vamos aprender a fazer um Bot do Telegram que monitora serviços através de requisições HTTP. Fiz em Javascript/Node.js porque era a linguagem que eu vinha estudando ultimamente então foi uma boa oportunidade de aplicá-la e eu gostei do resultado.
 As tecnologias trabalhadas aqui foram o Node.js, o Telegraf, que é um framework para construir Bots do Telegram em Node, o Axios, um cliente HTTP em Javascript, e o Docker para dar um toque mais profissional, rs.</description>
-    </item>
-    
-    <item>
-      <title>Natural Language Processing</title>
-      <link>https://thalesbruno.github.io/posts/natural-language-processing/</link>
-      <pubDate>Mon, 23 Nov 2020 18:39:37 -0300</pubDate>
-      
-      <guid>https://thalesbruno.github.io/posts/natural-language-processing/</guid>
-      <description>Photo by Emily Morter on Unsplash Voltando a escrever um post depois de algum tempo para falar de Natural Language Processing (NLP), área que comecei a estudar no primeiro semestre desse ano, gostei e que agora tornou-se oficialmente minha área de pesquisa em meu recém iniciado Mestrado em Ciência de Dados na UFBA.
- Natural Processing Language é uma subarea da linguística, ciência da computação e inteligência artificial[1], que se vale de conceitos e técnicas de cada um desses campos para o estudo e criação de mecanismos de processamento e análise de textos em linguagem natural.</description>
-    </item>
-    
-    <item>
-      <title>Handling Missing Values</title>
-      <link>https://thalesbruno.github.io/posts/handling-missing-values/</link>
-      <pubDate>Thu, 06 Aug 2020 08:23:11 -0300</pubDate>
-      
-      <guid>https://thalesbruno.github.io/posts/handling-missing-values/</guid>
-      <description>Photo by Emily Morter on Unsplash A key part of data science is to clean the data before work with it. For example, it&amp;rsquo;s common finding missing values in a dataset, either because that data was not collected or don&amp;rsquo;t exist though.
-Depends on the data we have missing, or even why we don&amp;rsquo;t have it, we handle it in different ways. So, we need to analyze each dataset column carefully and decide whether we will remove all rows with missing values, or remove the column itself, or fill the cells with some data (and which data could be).</description>
     </item>
     
     <item>
@@ -52,66 +32,13 @@ Depends on the data we have missing, or even why we don&amp;rsquo;t have it, we 
     </item>
     
     <item>
-      <title>Weeknotes 2: Back to day work, some instability, and NLP</title>
-      <link>https://thalesbruno.github.io/posts/weeknotes-2-back-to-work-instability-nlp/</link>
-      <pubDate>Sun, 19 Jul 2020 17:53:17 -0300</pubDate>
+      <title>About</title>
+      <link>https://thalesbruno.github.io/about/</link>
+      <pubDate>Tue, 23 Jun 2020 21:06:54 -0300</pubDate>
       
-      <guid>https://thalesbruno.github.io/posts/weeknotes-2-back-to-work-instability-nlp/</guid>
-      <description>The last week wasn&amp;rsquo;t the most productive week in my life for sure&amp;hellip; I have come back to work after a quite short 10-day vacation and I think that my anxiety about the return pushed me down.
-Entertainment Not much entertainment last week for me, but I watched English Football on most days. Since the return of the Football in England after the Pandemic outbreak, there are matches almost every single day.</description>
-    </item>
-    
-    <item>
-      <title>Mean, Median, and Mode</title>
-      <link>https://thalesbruno.github.io/posts/mean-median-mode/</link>
-      <pubDate>Tue, 14 Jul 2020 15:49:30 -0300</pubDate>
-      
-      <guid>https://thalesbruno.github.io/posts/mean-median-mode/</guid>
-      <description>In this article, we are talking about the common methods to measure the central tendency of the data, that is a way to explain our data in some manner. Although these measurements are quite simple, they are a foundation for a lot of other more complex measurements.
-We will use this fake list of grades of a class below to demonstrate the concepts:
-   Grades     9.</description>
-    </item>
-    
-    <item>
-      <title>Weeknotes 1: the Beginning</title>
-      <link>https://thalesbruno.github.io/posts/weeknotes-1-the-beginning/</link>
-      <pubDate>Sat, 11 Jul 2020 20:05:41 -0300</pubDate>
-      
-      <guid>https://thalesbruno.github.io/posts/weeknotes-1-the-beginning/</guid>
-      <description>I have decided to begin this weeknotes series here in my blog to keep me writing. As I say in the About section, I am trying to change my career, and this is such a really big project that will affect all my life and even the life of people around me. So I am dedicating time and energy to make this possible, and it will.
-English Last week was one more week of English learning and English improvement as well.</description>
-    </item>
-    
-    <item>
-      <title>Don&#39;t use Pie Charts</title>
-      <link>https://thalesbruno.github.io/posts/dont-use-pie-charts/</link>
-      <pubDate>Thu, 09 Jul 2020 20:42:13 -0300</pubDate>
-      
-      <guid>https://thalesbruno.github.io/posts/dont-use-pie-charts/</guid>
-      <description>Despite the clickbait title, this is not an article to be polemic or say universal truths, but just an invitation to think about it.
-A pie chart, sometimes called a pizza chart, is a chart in a format that seems like a - guess what? - pie, i.e., a round shape divided into slices. According to this article:
- A pie chart is a circular graph that shows the relative contribution that different categories contribute to an overall total.</description>
-    </item>
-    
-    <item>
-      <title>Numerical Variables</title>
-      <link>https://thalesbruno.github.io/posts/numerical-variables/</link>
-      <pubDate>Wed, 08 Jul 2020 17:07:28 -0300</pubDate>
-      
-      <guid>https://thalesbruno.github.io/posts/numerical-variables/</guid>
-      <description>Numerical variables, also known as quantitative variables, are the type of data that represent something measurable or countable like frequency, measurement, etc. Another attribute of numerical variables is that they are always numbers that can be placed in a meaningful order with consistent intervals.
-As examples of quantitative variables we may mention:
- Weight Height Sales Production units Movie Ratings  Discrete and continuous Numerical variables may be either discrete or continuous.</description>
-    </item>
-    
-    <item>
-      <title>Categorical Variables</title>
-      <link>https://thalesbruno.github.io/posts/categorical-variables/</link>
-      <pubDate>Tue, 07 Jul 2020 17:10:09 -0300</pubDate>
-      
-      <guid>https://thalesbruno.github.io/posts/categorical-variables/</guid>
-      <description>A categorical variable (sometimes called a nominal variable) is a variable that can assume one of a limited number of possible values described as categories and there is no intrinsic ordering to the categories. It uses labels, names, or other descriptors (even numbers) to identify exclusive categories or types of things.
-As an example of a categorical variable we may mention Nationality having values like Brazilian, Canadian, French, etc., and we can see that there is no ordering between the values: we cannot say that Brazilian is higher than Canadian.</description>
+      <guid>https://thalesbruno.github.io/about/</guid>
+      <description>I’m from Salvador, Brazil. I have worked as Linux System Administrator for almost 4 years as well as I have been a Web Developer enthusiast. Now I am really excited to begin a forma career as Full Stack Web Developer. This is my homepage where you can see my porfolio and some posts about Web Developer or something else. Feel free to contact me!
+Thanks for coming!</description>
     </item>
     
   </channel>
