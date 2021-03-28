@@ -28,7 +28,11 @@ As tecnologias trabalhadas aqui foram o Node.js, o Telegraf, que é um framework
       <pubDate>Tue, 28 Jul 2020 19:26:13 -0300</pubDate>
       
       <guid>https://thalesbruno.github.io/portfolio/</guid>
-      <description>Movie Recommendation API 🌐-- ℹ️ Weather Forecast App 🌐 ℹ️ </description>
+      <description>Github Finder 🌐 ℹ️
+React project using Hooks that fetch data from Github API.
+Weather Forecast App 🌐 ℹ️
+Node.js full stack project. Uses mapbox and darksky APIs
+Movie Recommendation API 🌐-- ℹ️</description>
     </item>
     
     <item>
