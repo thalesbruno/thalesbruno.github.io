@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on thalesbruno</title>
+    <link>https://thalesbruno.github.io/tags/python/</link>
+    <description>Recent content in python on thalesbruno</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 02 Apr 2021 22:33:59 -0300</lastBuildDate>
+    
+	<atom:link href="https://thalesbruno.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Django and Bootstrap: basic setup</title>
+      <link>https://thalesbruno.github.io/posts/django-bootstrap/</link>
+      <pubDate>Fri, 02 Apr 2021 22:33:59 -0300</pubDate>
+      
+      <guid>https://thalesbruno.github.io/posts/django-bootstrap/</guid>
+      <description>The purpose here is to create a basic setup of a Django project already integrated with Bootstrap and Font Awesome, which can be the base of your projects.
+If you want to check out the code, just go to the Github repository page here.
+Create the Django project First of all, we create the project root directory
+~: $ mkdir project ~: $ cd project/ So, we set up a Python virtual environment called venv where we will install the dependencies of our project.</description>
+    </item>
+    
+  </channel>
+</rss>

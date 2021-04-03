@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 16 Mar 2021 05:22:28 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 02 Apr 2021 22:33:59 -0300</lastBuildDate>
     
 	<atom:link href="https://thalesbruno.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>django</title>
+      <link>https://thalesbruno.github.io/tags/django/</link>
+      <pubDate>Fri, 02 Apr 2021 22:33:59 -0300</pubDate>
+      
+      <guid>https://thalesbruno.github.io/tags/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://thalesbruno.github.io/tags/python/</link>
+      <pubDate>Fri, 02 Apr 2021 22:33:59 -0300</pubDate>
+      
+      <guid>https://thalesbruno.github.io/tags/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>bots</title>

@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://thalesbruno.github.io/tags/django/</loc>
+    <lastmod>2021-04-02T22:33:59-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thalesbruno.github.io/posts/django-bootstrap/</loc>
+    <lastmod>2021-04-02T22:33:59-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thalesbruno.github.io/posts/</loc>
+    <lastmod>2021-04-02T22:33:59-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thalesbruno.github.io/tags/python/</loc>
+    <lastmod>2021-04-02T22:33:59-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thalesbruno.github.io/tags/</loc>
+    <lastmod>2021-04-02T22:33:59-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thalesbruno.github.io/</loc>
+    <lastmod>2021-04-02T22:33:59-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://thalesbruno.github.io/tags/bots/</loc>
     <lastmod>2021-03-16T05:22:28-03:00</lastmod>
   </url>
@@ -19,21 +49,6 @@
   
   <url>
     <loc>https://thalesbruno.github.io/tags/nodejs/</loc>
-    <lastmod>2021-03-16T05:22:28-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://thalesbruno.github.io/posts/</loc>
-    <lastmod>2021-03-16T05:22:28-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://thalesbruno.github.io/tags/</loc>
-    <lastmod>2021-03-16T05:22:28-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://thalesbruno.github.io/</loc>
     <lastmod>2021-03-16T05:22:28-03:00</lastmod>
   </url>
   

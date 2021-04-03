@@ -6,8 +6,91 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Tue, 16 Mar 2021 05:22:28 -0300</lastBuildDate>
+		<lastBuildDate>Fri, 02 Apr 2021 22:33:59 -0300</lastBuildDate>
 		<atom:link href="https://thalesbruno.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Django and Bootstrap: basic setup</title>
+			<link>https://thalesbruno.github.io/posts/django-bootstrap/</link>
+			<pubDate>Fri, 02 Apr 2021 22:33:59 -0300</pubDate>
+			
+			<guid>https://thalesbruno.github.io/posts/django-bootstrap/</guid>
+			<description>The purpose here is to create a basic setup of a Django project already integrated with Bootstrap and Font Awesome, which can be the base of your projects.
+If you want to check out the code, just go to the Github repository page here.
+Create the Django project First of all, we create the project root directory
+~: $ mkdir project ~: $ cd project/ So, we set up a Python virtual environment called venv where we will install the dependencies of our project.</description>
+			<content type="html"><![CDATA[<p>The purpose here is to create a basic setup of a Django project already integrated with Bootstrap and Font Awesome, which can be the base of your projects.</p>
+<p>If you want to check out the code, just go to the Github <a href="https://github.com/thalesbruno/django_bootstrap">repository page here</a>.</p>
+<h2 id="create-the-django-project">Create the Django project</h2>
+<p>First of all, we create the project root directory</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~: $ mkdir project
+~: $ <span class="nb">cd</span> project/
+</code></pre></div><p>So, we set up a Python <a href="https://realpython.com/python-virtual-environments-a-primer/">virtual environment</a> called <code>venv</code> where we will install the dependencies of our project. We activate it and install Django. Code below.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~/project: $ python3 -m venv venv
+~/project: $ <span class="nb">source</span> venv/bin/activate
+<span class="o">(</span>venv<span class="o">)</span> ~/project: $ pip install Django
+</code></pre></div><p>Django installed, the next step is to create a Django project. We create a <code>src/</code> directory and run the <code>django-project</code> command inside it. We called the project <code>core</code> and the dot indicates we are building it in the current directory.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>venv<span class="o">)</span> ~/project: $ mkdir src
+<span class="o">(</span>venv<span class="o">)</span> ~/project: $ <span class="nb">cd</span> src/
+<span class="o">(</span>venv<span class="o">)</span> ~/project/src: $ django-admin startproject core .
+</code></pre></div><p>Now we create two more directories: <code>static</code>, where we will put the Bootstrap and Font Awesome files, and <code>templates</code>, where we will put our HTML template files.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>venv<span class="o">)</span> ~/project/src: $ mkdir static templates
+</code></pre></div><p>Ready to run the Django service. For that, we first apply the migrations (for the default applications Django comes with, like admin, auth, etc.), and so run the server.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>venv<span class="o">)</span> ~/project/src: $ python manage.py migrate
+<span class="o">(</span>venv<span class="o">)</span> ~/project/src: $ python manage.py runserver
+</code></pre></div><p>If everything went well the service must be accessible at <code>http://127.0.0.1:8000</code>.</p>
+<h2 id="bootstrap-and-font-awesome-integration">Bootstrap and Font-awesome integration</h2>
+<p>So, with the Django project built, we integrate Bootstrap and Font Awesome sources on it.</p>
+<h3 id="bootstrap">Bootstrap</h3>
+<p>In the Bootstrap <a href="https://getbootstrap.com/docs/4.3/getting-started/download/">Downloads</a> page, we chose <code>Compiled CSS and JS</code>, ready-to-use compiled code. It&rsquo;s the first option on the web page.</p>
+<p>We unzip the package and copy its two directories <code>js</code> and <code>css</code> to the directory <code>/project/src/static/</code> in our project. Almost there, before leaving this step we remove all unnecessary files in the <code>js</code> and <code>css</code> folders. We only keep with <code>bootstrap.min.js and bootstrap.min.js.map</code> in the <code>js</code>, and with <code>bootstrap.min.css and bootstrap.min.css.map</code> in the <code>css</code>.</p>
+<h3 id="font-awesome">Font-awesome</h3>
+<p>With Django and Bootstrap integrated we already have a pretty good setup, but we can also integrate with Font Awesome as the icing on the cake.</p>
+<p>In the Font Awesome official website, we download its Free Package on <a href="https://fontawesome.com/how-to-use/on-the-web/setup/hosting-font-awesome-yourself">this link</a>.</p>
+<p>We create a <code>fa</code> subdirectory on our project <code>/project/src/static/fa/</code> and so we unzip the Font Awesome package and copy the <code>webfonts</code> and <code>css</code> folders there. We also remove unnecessary files in <code>/project/src/static/fa/css</code>, keeping only the <code>all.min.css</code>.</p>
+<h2 id="integrating-everything">Integrating everything</h2>
+<p>The final step is integrating everything.</p>
+<p>We edit the <code>/project/src/core/settings.py</code> file, adding a line with a relative reference to the <code>static</code> directory.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">STATICFILES_DIRS</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;static&#39;</span><span class="p">)]</span>
+</code></pre></div><p>In the same file, we also edit the section about <code>TEMPLATES</code>, specifically its <code>DIR</code> value to the following:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">TEMPLATES</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+     <span class="c1"># -- some code up there --</span>
+        <span class="s1">&#39;DIRS&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="n">BASE_DIR</span><span class="p">),</span> <span class="s1">&#39;templates/&#39;</span><span class="p">)],</span>
+     <span class="c1"># -- some code down there</span>
+</code></pre></div><h3 id="views-and-urls">Views and URLs</h3>
+<p>Before creating templates, we do some logic stuff.</p>
+<p>In Django, we map all the URLs our application serves in the <code>urls.py</code> file. So, we create an URL on the root that, when accessed, call a view, i.e. a function inside <code>views.py</code>, which is who will be handling the request and rendering the result page to the user.</p>
+<p><code>urls.py</code> file:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="kn">from</span> <span class="nn">.views</span> <span class="kn">import</span> <span class="n">index</span>
+
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;admin/&#39;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="p">),</span>
+<span class="p">]</span>
+
+</code></pre></div><p><code>views.py</code> file:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+
+
+<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="p">{})</span>
+</code></pre></div><p>At this point, we only need an <code>index.html</code> template file.</p>
+<h3 id="templates">Templates</h3>
+<p>The very final step, I swear, is creating the <code>index.html</code> file. We create it from the scratch at the templates directory, and we use <a href="https://jinja.palletsprojects.com/en/2.10.x/">Jinja</a> template language.</p>
+<p>At the beginning of the file, we load the static files.</p>
+<pre><code>{% load static %}
+</code></pre><p>In the <code>head</code> HTML section we put the references to the CSS and JS files.</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% static &#39;css/bootstrap.min.css&#39; %}&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% static &#39;fa/css/all.min.css&#39; %}&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{% static &#39;js/bootstrap.min.js&#39; %}&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div><p>Well done! We are ready to write HTML code using Bootstrap and Font Awesome as a visual pattern! In the GitHub repository of this project, we can see an <code>index.html</code> sample already using some Bootstrap components, which seems like this:</p>
+<p><img src="https://thepracticaldev.s3.amazonaws.com/i/fuo71kza50tuce68nhnv.png" alt="Django and Bootstrap generic page"></p>
+]]></content>
+		</item>
 		
 		<item>
 			<title>Criando um Bot do Telegram com Node.js</title>

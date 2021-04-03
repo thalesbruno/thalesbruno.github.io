@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
+<meta itemprop="name" content="Django and Bootstrap: basic setup">
+<meta itemprop="description" content="The purpose here is to create a basic setup of a Django project already integrated with Bootstrap and Font Awesome, which can be the base of your projects.
+If you want to check out the code, just go to the Github repository page here.
+Create the Django project First of all, we create the project root directory
+~: $ mkdir project ~: $ cd project/ So, we set up a Python virtual environment called venv where we will install the dependencies of our project.">
+<meta itemprop="datePublished" content="2021-04-02T22:33:59-03:00" />
+<meta itemprop="dateModified" content="2021-04-02T22:33:59-03:00" />
+<meta itemprop="wordCount" content="708">
+
+
+
+<meta itemprop="keywords" content="python,django," /><meta property="og:title" content="Django and Bootstrap: basic setup" />
+<meta property="og:description" content="The purpose here is to create a basic setup of a Django project already integrated with Bootstrap and Font Awesome, which can be the base of your projects.
+If you want to check out the code, just go to the Github repository page here.
+Create the Django project First of all, we create the project root directory
+~: $ mkdir project ~: $ cd project/ So, we set up a Python virtual environment called venv where we will install the dependencies of our project." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://thalesbruno.github.io/posts/django-bootstrap/" />
+<meta property="article:published_time" content="2021-04-02T22:33:59-03:00" />
+<meta property="article:modified_time" content="2021-04-02T22:33:59-03:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Django and Bootstrap: basic setup"/>
+<meta name="twitter:description" content="The purpose here is to create a basic setup of a Django project already integrated with Bootstrap and Font Awesome, which can be the base of your projects.
+If you want to check out the code, just go to the Github repository page here.
+Create the Django project First of all, we create the project root directory
+~: $ mkdir project ~: $ cd project/ So, we set up a Python virtual environment called venv where we will install the dependencies of our project."/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Django and Bootstrap: basic setup</title>
+	<link rel="stylesheet" href="https://thalesbruno.github.io/css/style.min.dde859928ee7600ec905423b4f055aba03bcce8d54d32646e53869e036638eec.css" integrity="sha256-3ehZko7nYA7JBUI7TwVaugO8zo1U0yZG5Thp4DZjjuw=" crossorigin="anonymous">
+
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://thalesbruno.github.io">thalesbruno</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+				<a href="https://thalesbruno.github.io/portfolio/">Portfolio</a>
+				<a href="https://thalesbruno.github.io/posts/">Posts</a>
+				<a href="https://thalesbruno.github.io/about/">About</a>
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://twitter.com/thlsbrn" target="_blank" rel="noopener me" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+    </path>
+</svg></a><a href="https://www.linkedin.com/in/thales-bruno/" target="_blank" rel="noopener me" title="Linkedin"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg></a><a href="https://github.com/thalesbruno" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg></a><a href="mailto:thalesbrno&#43;site@gmail.com" target="_blank" rel="noopener me" title="Email"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+    <polyline points="22,6 12,13 2,6"></polyline>
+</svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://thalesbruno.github.io/portfolio/">Portfolio</a></li>
+			<li><a href="https://thalesbruno.github.io/posts/">Posts</a></li>
+			<li><a href="https://thalesbruno.github.io/about/">About</a></li>
+		</ul>
+	</div>
+
+
+<main class="site-main section-inner animated fadeIn faster">
+    <article class="thin">
+        <header class="post-header">
+            <div class="post-meta"><span>Apr 2, 2021</span></div>
+            <h1>Django and Bootstrap: basic setup</h1>
+        </header>
+        <div class="content">
+            <p>The purpose here is to create a basic setup of a Django project already integrated with Bootstrap and Font Awesome, which can be the base of your projects.</p>
+<p>If you want to check out the code, just go to the Github <a href="https://github.com/thalesbruno/django_bootstrap">repository page here</a>.</p>
+<h2 id="create-the-django-project">Create the Django project<a href="#create-the-django-project" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>First of all, we create the project root directory</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~: $ mkdir project
+~: $ <span class="nb">cd</span> project/
+</code></pre></div><p>So, we set up a Python <a href="https://realpython.com/python-virtual-environments-a-primer/">virtual environment</a> called <code>venv</code> where we will install the dependencies of our project. We activate it and install Django. Code below.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~/project: $ python3 -m venv venv
+~/project: $ <span class="nb">source</span> venv/bin/activate
+<span class="o">(</span>venv<span class="o">)</span> ~/project: $ pip install Django
+</code></pre></div><p>Django installed, the next step is to create a Django project. We create a <code>src/</code> directory and run the <code>django-project</code> command inside it. We called the project <code>core</code> and the dot indicates we are building it in the current directory.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>venv<span class="o">)</span> ~/project: $ mkdir src
+<span class="o">(</span>venv<span class="o">)</span> ~/project: $ <span class="nb">cd</span> src/
+<span class="o">(</span>venv<span class="o">)</span> ~/project/src: $ django-admin startproject core .
+</code></pre></div><p>Now we create two more directories: <code>static</code>, where we will put the Bootstrap and Font Awesome files, and <code>templates</code>, where we will put our HTML template files.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>venv<span class="o">)</span> ~/project/src: $ mkdir static templates
+</code></pre></div><p>Ready to run the Django service. For that, we first apply the migrations (for the default applications Django comes with, like admin, auth, etc.), and so run the server.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>venv<span class="o">)</span> ~/project/src: $ python manage.py migrate
+<span class="o">(</span>venv<span class="o">)</span> ~/project/src: $ python manage.py runserver
+</code></pre></div><p>If everything went well the service must be accessible at <code>http://127.0.0.1:8000</code>.</p>
+<h2 id="bootstrap-and-font-awesome-integration">Bootstrap and Font-awesome integration<a href="#bootstrap-and-font-awesome-integration" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>So, with the Django project built, we integrate Bootstrap and Font Awesome sources on it.</p>
+<h3 id="bootstrap">Bootstrap<a href="#bootstrap" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>In the Bootstrap <a href="https://getbootstrap.com/docs/4.3/getting-started/download/">Downloads</a> page, we chose <code>Compiled CSS and JS</code>, ready-to-use compiled code. It&rsquo;s the first option on the web page.</p>
+<p>We unzip the package and copy its two directories <code>js</code> and <code>css</code> to the directory <code>/project/src/static/</code> in our project. Almost there, before leaving this step we remove all unnecessary files in the <code>js</code> and <code>css</code> folders. We only keep with <code>bootstrap.min.js and bootstrap.min.js.map</code> in the <code>js</code>, and with <code>bootstrap.min.css and bootstrap.min.css.map</code> in the <code>css</code>.</p>
+<h3 id="font-awesome">Font-awesome<a href="#font-awesome" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>With Django and Bootstrap integrated we already have a pretty good setup, but we can also integrate with Font Awesome as the icing on the cake.</p>
+<p>In the Font Awesome official website, we download its Free Package on <a href="https://fontawesome.com/how-to-use/on-the-web/setup/hosting-font-awesome-yourself">this link</a>.</p>
+<p>We create a <code>fa</code> subdirectory on our project <code>/project/src/static/fa/</code> and so we unzip the Font Awesome package and copy the <code>webfonts</code> and <code>css</code> folders there. We also remove unnecessary files in <code>/project/src/static/fa/css</code>, keeping only the <code>all.min.css</code>.</p>
+<h2 id="integrating-everything">Integrating everything<a href="#integrating-everything" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>The final step is integrating everything.</p>
+<p>We edit the <code>/project/src/core/settings.py</code> file, adding a line with a relative reference to the <code>static</code> directory.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">STATICFILES_DIRS</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;static&#39;</span><span class="p">)]</span>
+</code></pre></div><p>In the same file, we also edit the section about <code>TEMPLATES</code>, specifically its <code>DIR</code> value to the following:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">TEMPLATES</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+     <span class="c1"># -- some code up there --</span>
+        <span class="s1">&#39;DIRS&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="n">BASE_DIR</span><span class="p">),</span> <span class="s1">&#39;templates/&#39;</span><span class="p">)],</span>
+     <span class="c1"># -- some code down there</span>
+</code></pre></div><h3 id="views-and-urls">Views and URLs<a href="#views-and-urls" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>Before creating templates, we do some logic stuff.</p>
+<p>In Django, we map all the URLs our application serves in the <code>urls.py</code> file. So, we create an URL on the root that, when accessed, call a view, i.e. a function inside <code>views.py</code>, which is who will be handling the request and rendering the result page to the user.</p>
+<p><code>urls.py</code> file:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="kn">from</span> <span class="nn">.views</span> <span class="kn">import</span> <span class="n">index</span>
+
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;admin/&#39;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="p">),</span>
+<span class="p">]</span>
+
+</code></pre></div><p><code>views.py</code> file:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+
+
+<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="p">{})</span>
+</code></pre></div><p>At this point, we only need an <code>index.html</code> template file.</p>
+<h3 id="templates">Templates<a href="#templates" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>The very final step, I swear, is creating the <code>index.html</code> file. We create it from the scratch at the templates directory, and we use <a href="https://jinja.palletsprojects.com/en/2.10.x/">Jinja</a> template language.</p>
+<p>At the beginning of the file, we load the static files.</p>
+<pre><code>{% load static %}
+</code></pre><p>In the <code>head</code> HTML section we put the references to the CSS and JS files.</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% static &#39;css/bootstrap.min.css&#39; %}&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% static &#39;fa/css/all.min.css&#39; %}&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{% static &#39;js/bootstrap.min.js&#39; %}&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div><p>Well done! We are ready to write HTML code using Bootstrap and Font Awesome as a visual pattern! In the GitHub repository of this project, we can see an <code>index.html</code> sample already using some Bootstrap components, which seems like this:</p>
+<p><img src="https://thepracticaldev.s3.amazonaws.com/i/fuo71kza50tuce68nhnv.png" alt="Django and Bootstrap generic page"></p>
+
+        </div>
+        
+
+<style>
+    #share-buttons {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    #share-buttons:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    #share-buttons>div {
+        position: relative;
+        text-align: left;
+        height: 36px;
+        width: 32px;
+        float: left;
+        text-align: center;
+    }
+
+    #share-buttons>div>svg {
+        height: 16px;
+        fill: #d5d5d5;
+        margin-top: 10px;
+    }
+
+    #share-buttons>div:hover {
+        cursor: pointer;
+    }
+
+    #share-buttons>div.twitter:hover>svg {
+        fill: #55ACEE;
+    }
+
+    #share-buttons>div.linkedin:hover>svg {
+        fill: #0077b5;
+    }
+
+    #share-buttons>div.mail:hover>svg {
+        fill: #7D7D7D;
+    }
+
+    #share-buttons>div.instagram:hover>svg {
+        fill: #C73B92;
+    }
+
+    #share-buttons>div.facebook>svg {
+        height: 18px;
+        margin-top: 9px;
+    }
+
+    #share-buttons>div.twitter>svg {
+        height: 20px;
+        margin-top: 8px;
+    }
+
+    #share-buttons>div.linkedin>svg {
+        height: 19px;
+        margin-top: 7px;
+    }
+
+    #share-buttons>div.pinterest>svg {
+        height: 20px;
+        margin-top: 9px;
+    }
+
+    #share-buttons>div.mail>svg {
+        height: 14px;
+        margin-top: 11px;
+    }
+</style>
+
+<span style="color: silver;">Share on: </span>
+<div id="share-buttons">
+    <div class="twitter" title="Share this on Twitter"
+        onclick="window.open('https://twitter.com/intent/tweet/?text=Django and Bootstrap: basic setup&url=https:\/\/thalesbruno.github.io\/posts\/django-bootstrap\/');">
+        <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z" />
+        </svg></div>
+    <div class="linkedin" title="Share this on Linkedin"
+        onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https:\/\/thalesbruno.github.io\/posts\/django-bootstrap\/&title=&summary=&source=');">
+        <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z" />
+        </svg></div>
+    
+    <div class="mail" title="Share this through Email" onclick="window.open('mailto:?&body=https:\/\/thalesbruno.github.io\/posts\/django-bootstrap\/');"><svg
+            viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z" />
+        </svg></div>
+</div>
+        <hr class="post-end">
+        <footer class="post-info">
+            <p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-tag meta-icon">
+                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                    <line x1="7" y1="7" x2="7" y2="7"></line>
+                </svg><span class="tag"><a href="https://thalesbruno.github.io/tags/python">python</a></span><span class="tag"><a href="https://thalesbruno.github.io/tags/django">django</a></span>
+            </p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-file-text">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>708 Words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-calendar">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>2021-04-02 22:33 -0300</p>
+        </footer>
+    </article>
+    <div class="post-nav thin">
+        <a class="prev-post" href="https://thalesbruno.github.io/posts/criando-bot-telegram-nodejs/">
+            <span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg></span><br><span>Criando um Bot do Telegram com Node.js</span>
+        </a>
+    </div>
+    <div id="comments" class="thin">
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "thalesbruno" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2021 <a href="https://thalesbruno.github.io">Thales Bruno</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://thalesbruno.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+
+	<script src="https://thalesbruno.github.io/js/bundle.min.4a9a0ac3d2217822c7865b4161e6c2a71de1d70492264337755427898dd718f6.js" integrity="sha256-SpoKw9IheCLHhltBYebCpx3h1wSSJkM3dVQniY3XGPY=" crossorigin="anonymous"></script>
+	
+
+</body>
+
+</html>
